@@ -1,6 +1,6 @@
 # VU Meters - 800x480
 
-6 template(s) available for 800x480 resolution.
+7 template(s) available for 800x480 resolution.
 
 ---
 
@@ -97,6 +97,22 @@
 | Album Art | Yes |
 
 **[Download 800x480_custom_06.zip](800x480_custom_06.zip)**
+
+---
+
+## 800x480_custom_07
+
+![800x480_custom_07](previews/800x480_custom_07.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | Esoteric-T1 |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**[Download 800x480_custom_07.zip](800x480_custom_07.zip)**
 
 ---
 
