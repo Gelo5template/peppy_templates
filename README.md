@@ -2,108 +2,113 @@
 
 Community collection of meter skins and spectrum visualizations for [PeppyMeter Screensaver](https://github.com/foonerd/peppy_screensaver).
 
-## Contents
+## Repository Structure
 
-| Folder | Description |
-|--------|-------------|
-| [templates](templates/) | VU meter skins (circular, linear) |
-| [templates_spectrum](templates_spectrum/) | Spectrum analyzer visualizations |
+```
+template_peppy/           - VU meters only
+templates_peppy_spectrum/ - VU meters with spectrum overlay
+templates_spectrum/       - Spectrum analyzers only
+
+Each category contains:
+  [width]/
+    [height]/
+      [template-name]/
+        meters.txt (or spectrum.txt)
+        *.png, *.jpg
+        preview.jpg
+        README.md
+```
+
+## Folder Hierarchy
+
+Templates organized by width, then height:
+
+| Width | Heights | Resolutions |
+|-------|---------|-------------|
+| 0640 | - | 640x480 and variants |
+| 0800 | 480, 600 | 800x480, 800x600 |
+| 1024 | 600, 768 | 1024x600, 1024x768 |
+| 1280 | 720, 800 | 1280x720, 1280x800 |
+| 1366 | 768 | 1366x768 |
+| 1480 | 320 | 1480x320 (wide displays) |
+| 1920 | 1080 | 1920x1080 |
+
+## Categories
+
+### template_peppy
+VU meter skins without spectrum analyzer. Circular (needle) or linear (bar) meters with optional metadata overlay.
+
+### templates_peppy_spectrum
+Combined VU meter and spectrum analyzer. Both visualizations displayed simultaneously.
+
+### templates_spectrum
+Spectrum analyzer only. Bar graphs, pipes, with optional reflections.
 
 ## Installation
 
-### Quick Install (Single Template)
+### Single Template
 
-1. Download the template folder you want
-2. Copy to your Volumio device:
-   ```bash
-   scp -r template_folder volumio@volumio.local:/data/INTERNAL/peppy_screensaver/templates/
-   ```
-3. Restart the plugin or reboot
-
-### Full Collection Install
+1. Navigate to desired template
+2. Download the template folder
+3. Copy to Volumio:
 
 ```bash
-# On your Volumio device
-cd /data/INTERNAL/peppy_screensaver
-git clone --depth=1 https://github.com/foonerd/peppy_templates.git temp_clone
-cp -r temp_clone/templates/* templates/
-cp -r temp_clone/templates_spectrum/* templates_spectrum/
-rm -rf temp_clone
+scp -r template-folder volumio@volumio.local:/data/INTERNAL/peppy_screensaver/templates/
 ```
 
-### Template Location
+4. Select in plugin settings
 
-Templates are stored in:
+### Sparse Checkout (Specific Resolution)
+
+```bash
+git clone --depth=1 --filter=blob:none --sparse https://github.com/foonerd/peppy_templates.git
+cd peppy_templates
+git sparse-checkout set template_peppy/0800/480
 ```
-/data/INTERNAL/peppy_screensaver/templates/          - VU meters
-/data/INTERNAL/peppy_screensaver/templates_spectrum/ - Spectrum analyzers
+
+### Full Clone
+
+```bash
+git clone --depth=1 https://github.com/foonerd/peppy_templates.git
 ```
 
-## Using Templates
+## Template Locations on Volumio
 
-1. Open Volumio web interface
-2. Settings > Plugins > PeppyMeter Screensaver > Settings
-3. Select template folder from dropdown
-4. Choose specific meter/spectrum from the list
-5. Save and restart screensaver
+```
+/data/INTERNAL/peppy_screensaver/templates/
+```
 
-## Resolution Folders
+Copy template folders directly to this location.
 
-Templates are organized by screen resolution:
+## Documentation
 
-| Folder | Resolution | Common Displays |
-|--------|------------|-----------------|
-| 800x480 | 800x480 | Official Pi 7" touchscreen |
-| 1024x600 | 1024x600 | Many 7" HDMI displays |
-| 1280x720 | 1280x720 (720p) | HD displays |
-| 1920x1080 | 1920x1080 (1080p) | Full HD displays |
-
-Choose the folder matching your display resolution for best results.
+- [VU Meter Configuration](docs/METERS.md)
+- [Spectrum Configuration](docs/SPECTRUM.md)
+- [Template README Template](docs/TEMPLATE_README.md)
+- [Contributing Guide](CONTRIBUTING.md)
 
 ## Contributing
 
-Contributions welcome! See individual folder READMEs for structure requirements:
+See [CONTRIBUTING.md](CONTRIBUTING.md) for submission guidelines.
 
-- [Template Structure](templates/README.md)
-- [Spectrum Structure](templates_spectrum/README.md)
+### Quick Checklist
 
-### Submission Guidelines
-
-1. Fork this repository
-2. Add your template in the appropriate resolution folder
-3. Include all required files (see folder READMEs)
-4. Test on actual hardware before submitting
-5. Submit a pull request with:
-   - Template name and description
-   - Screenshot(s)
-   - Your name/handle for credits
-
-### Naming Convention
-
-```
-[resolution]/[name]/
-```
-
-Examples:
-- `800x480/my-custom-meter/`
-- `1920x1080/neon-spectrum/`
-
-Use lowercase, hyphens for spaces. Avoid special characters.
+- [ ] Place in correct path: `[category]/[width]/[height]/[name]/`
+- [ ] Include meters.txt or spectrum.txt
+- [ ] Include preview.jpg
+- [ ] Include README.md
+- [ ] Test on hardware
 
 ## Credits
 
-Templates in this collection are contributed by the community. Individual credits are listed in each template's folder or meters.txt file.
-
 - Original PeppyMeter: [project-owner](https://github.com/project-owner)
-- Template contributions: Various community members
+- Original PeppySpectrum: [project-owner](https://github.com/project-owner)
 
 ## License
 
-Individual templates may have their own licenses. Unless otherwise specified, templates are provided under MIT license for personal and non-commercial use.
+Individual templates may have their own licenses. See each template's README.
 
 ## Related
 
 - [PeppyMeter Screensaver Plugin](https://github.com/foonerd/peppy_screensaver)
 - [PeppyMeter Build Tools](https://github.com/foonerd/peppy_builds)
-- [Original PeppyMeter](https://github.com/project-owner/PeppyMeter)
-- [Original PeppySpectrum](https://github.com/project-owner/PeppySpectrum)
