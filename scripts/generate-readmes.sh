@@ -70,35 +70,74 @@ extract_preview() {
 
 # Extract meter info from zip
 # CRITICAL: tr -d '\r' strips Windows line endings that break markdown tables
+# Supports both meters.txt (VU meters) and spectrum.txt (spectrum analyzers)
+# Handles packs with multiple templates
 get_meter_info() {
     local zip_file="$1"
     local field="$2"
     
-    # Extract meters.txt content and strip Windows line endings
-    local meters_content=$(unzip -p "$zip_file" "*/meters.txt" 2>/dev/null | tr -d '\r' || true)
+    # Try meters.txt first, then spectrum.txt
+    local config_content=""
+    local config_type="meter"
     
-    # If not found in subfolder, try root
-    if [[ -z "$meters_content" ]]; then
-        meters_content=$(unzip -p "$zip_file" "meters.txt" 2>/dev/null | tr -d '\r' || true)
+    # Try meters.txt in subfolder
+    config_content=$(unzip -p "$zip_file" "*/meters.txt" 2>/dev/null | tr -d '\r' || true)
+    
+    # Try meters.txt at root
+    if [[ -z "$config_content" ]]; then
+        config_content=$(unzip -p "$zip_file" "meters.txt" 2>/dev/null | tr -d '\r' || true)
+    fi
+    
+    # Try spectrum.txt in subfolder
+    if [[ -z "$config_content" ]]; then
+        config_content=$(unzip -p "$zip_file" "*/spectrum.txt" 2>/dev/null | tr -d '\r' || true)
+        config_type="spectrum"
+    fi
+    
+    # Try spectrum.txt at root
+    if [[ -z "$config_content" ]]; then
+        config_content=$(unzip -p "$zip_file" "spectrum.txt" 2>/dev/null | tr -d '\r' || true)
+        config_type="spectrum"
     fi
     
     case "$field" in
         "name")
-            echo "$meters_content" | grep -m1 '^\[' | tr -d '[]' | xargs
+            # Get ALL section names for packs
+            local count=$(echo "$config_content" | grep -c '^\[' || echo 0)
+            
+            if [[ "$count" -gt 1 ]]; then
+                # Pack with multiple templates - list all with bullets
+                echo "$config_content" | grep '^\[' | tr -d '[]' | sed 's/^/- /'
+            elif [[ "$count" -eq 1 ]]; then
+                # Single template
+                echo "$config_content" | grep '^\[' | tr -d '[]' | xargs
+            else
+                echo ""
+            fi
+            ;;
+        "count")
+            # Return number of templates in pack
+            echo "$config_content" | grep -c '^\[' || echo 0
             ;;
         "type")
-            echo "$meters_content" | grep -m1 'meter.type' | cut -d'=' -f2 | tr -d ' ' | xargs
+            if [[ "$config_type" == "spectrum" ]]; then
+                echo "spectrum"
+            else
+                echo "$config_content" | grep -m1 'meter.type' | cut -d'=' -f2 | tr -d ' ' | xargs
+            fi
             ;;
         "extended")
-            if echo "$meters_content" | grep -qi 'config.extend.*=.*true'; then
+            if echo "$config_content" | grep -qi 'config.extend.*=.*true'; then
                 echo "Yes"
             else
                 echo "No"
             fi
             ;;
         "spectrum")
-            if echo "$meters_content" | grep -qi 'spectrum.*='; then
-                local spec_val=$(echo "$meters_content" | grep -i 'spectrum' | grep -v '^#' | head -1 | cut -d'=' -f2 | tr -d ' ')
+            if [[ "$config_type" == "spectrum" ]]; then
+                echo "Yes"
+            elif echo "$config_content" | grep -qi 'spectrum.*='; then
+                local spec_val=$(echo "$config_content" | grep -i 'spectrum' | grep -v '^#' | head -1 | cut -d'=' -f2 | tr -d ' ')
                 if [[ -n "$spec_val" && "$spec_val" != "none" && "$spec_val" != "None" ]]; then
                     echo "Yes"
                 else
@@ -109,7 +148,7 @@ get_meter_info() {
             fi
             ;;
         "albumart")
-            if echo "$meters_content" | grep -qi 'albumart.pos'; then
+            if echo "$config_content" | grep -qi 'albumart.pos'; then
                 echo "Yes"
             else
                 echo "No"
@@ -161,10 +200,17 @@ EOF
         
         # Get meter info
         local meter_name=$(get_meter_info "$zip_file" "name")
+        local meter_count=$(get_meter_info "$zip_file" "count")
         local meter_type=$(get_meter_info "$zip_file" "type")
         local has_extended=$(get_meter_info "$zip_file" "extended")
         local has_spectrum=$(get_meter_info "$zip_file" "spectrum")
         local has_albumart=$(get_meter_info "$zip_file" "albumart")
+        
+        # Determine if this is a pack
+        local is_pack="No"
+        if [[ "$meter_count" -gt 1 ]]; then
+            is_pack="Yes (${meter_count} templates)"
+        fi
         
         # Template section
         cat >> "$dir/README.md" << EOF
@@ -180,8 +226,26 @@ EOF
 EOF
         fi
 
-        # Specs table
-        cat >> "$dir/README.md" << EOF
+        # Specs table - different format for packs vs single
+        if [[ "$meter_count" -gt 1 ]]; then
+            # Pack format - list meters separately
+            cat >> "$dir/README.md" << EOF
+| Property | Value |
+|----------|-------|
+| Template Pack | ${is_pack} |
+| Meter Type | ${meter_type:-linear} |
+| Extended Config | ${has_extended:-No} |
+| Spectrum | ${has_spectrum:-No} |
+| Album Art | ${has_albumart:-No} |
+
+**Included Meters:**
+
+${meter_name}
+
+EOF
+        else
+            # Single template format
+            cat >> "$dir/README.md" << EOF
 | Property | Value |
 |----------|-------|
 | Meter Name | ${meter_name:-unknown} |
@@ -190,6 +254,10 @@ EOF
 | Spectrum | ${has_spectrum:-No} |
 | Album Art | ${has_albumart:-No} |
 
+EOF
+        fi
+
+        cat >> "$dir/README.md" << EOF
 [Download ${template_name}.zip](${template_name}.zip)
 
 ---
@@ -198,13 +266,23 @@ EOF
 
     done
 
-    # Footer
+    # Footer with category-specific install path
+    local install_path=""
+    case "$category" in
+        "template_peppy")
+            install_path="/data/INTERNAL/peppy_screensaver/templates/"
+            ;;
+        "templates_peppy_spectrum"|"templates_spectrum")
+            install_path="/data/INTERNAL/peppy_screensaver/templates_spectrum/"
+            ;;
+    esac
+    
     cat >> "$dir/README.md" << EOF
 
 ## Installation
 
 1. Download the desired template zip
-2. Extract to \`/data/INTERNAL/peppy_screensaver/templates/\`
+2. Extract to \`${install_path}\`
 3. Select in plugin settings
 
 ---
