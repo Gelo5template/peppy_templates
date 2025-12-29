@@ -10,6 +10,52 @@ RAW_URL="https://raw.githubusercontent.com/foonerd/peppy_templates/main"
 ASSETS_DIR="assets"
 NO_PREVIEW="no-preview.svg"
 
+# Extract template prefix by stripping known suffixes
+get_template_prefix() {
+    local name="$1"
+    # Strip known suffixes: _meter, _spectr, _spectrum, _vu
+    echo "$name" | sed -E 's/_(meter|spectr|spectrum|vu)$//'
+}
+
+# Find companion templates across categories
+# Returns: category/path/filename.zip for each match
+find_companions() {
+    local current_zip="$1"
+    local current_name=$(basename "$current_zip" .zip)
+    local current_dir=$(dirname "$current_zip")
+    local current_category=$(echo "$current_dir" | cut -d'/' -f1)
+    
+    # Get prefix
+    local prefix=$(get_template_prefix "$current_name")
+    
+    # Extract resolution from path (e.g., 1920/1080)
+    local res_path=$(echo "$current_dir" | grep -oE '[0-9]+/[0-9]+')
+    
+    # Search other categories for matching prefix
+    local companions=""
+    
+    for category in template_peppy templates_peppy_spectrum templates_spectrum; do
+        # Skip current category
+        [[ "$category" == "$current_category" ]] && continue
+        
+        # Look for matching zips in same resolution
+        local search_dir="${category}/${res_path}"
+        [[ -d "$search_dir" ]] || continue
+        
+        for zip in "$search_dir"/*.zip; do
+            [[ -f "$zip" ]] || continue
+            local zip_name=$(basename "$zip" .zip)
+            local zip_prefix=$(get_template_prefix "$zip_name")
+            
+            if [[ "$zip_prefix" == "$prefix" ]]; then
+                companions="${companions}${category}|${zip_name}\n"
+            fi
+        done
+    done
+    
+    echo -e "$companions" | grep -v '^$' || true
+}
+
 # Find all resolution folders containing zip files
 find_resolution_folders() {
     find template_peppy templates_peppy_spectrum templates_spectrum \
@@ -189,6 +235,8 @@ EOF
     echo "" >> "$dir/README.md"
 
     # Process each zip file
+    local res_path=$(echo "$dir" | grep -oE '[0-9]+/[0-9]+')
+    
     for zip_file in "$dir"/*.zip; do
         [[ -f "$zip_file" ]] || continue
         
@@ -260,6 +308,36 @@ EOF
         cat >> "$dir/README.md" << EOF
 [Download ${template_name}.zip](${template_name}.zip)
 
+EOF
+
+        # Check for companion templates
+        local companions=$(find_companions "$zip_file")
+        if [[ -n "$companions" ]]; then
+            cat >> "$dir/README.md" << EOF
+**Related Downloads:**
+
+EOF
+            echo "$companions" | while IFS='|' read -r comp_category comp_name; do
+                [[ -z "$comp_category" ]] && continue
+                local comp_label=""
+                case "$comp_category" in
+                    "template_peppy")
+                        comp_label="VU Meter"
+                        ;;
+                    "templates_peppy_spectrum")
+                        comp_label="VU Meter + Spectrum"
+                        ;;
+                    "templates_spectrum")
+                        comp_label="Spectrum"
+                        ;;
+                esac
+                local comp_path="${comp_category}/${res_path}/${comp_name}.zip"
+                echo "- [${comp_label}: ${comp_name}.zip](../../../${comp_path})" >> "$dir/README.md"
+            done
+            echo "" >> "$dir/README.md"
+        fi
+
+        cat >> "$dir/README.md" << EOF
 ---
 
 EOF
