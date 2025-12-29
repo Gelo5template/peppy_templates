@@ -305,36 +305,65 @@ EOF
 EOF
         fi
 
-        cat >> "$dir/README.md" << EOF
-[Download ${template_name}.zip](${template_name}.zip)
-
-EOF
+        # Get install path for this template
+        local this_install_path=""
+        local this_label=""
+        case "$category" in
+            "template_peppy")
+                this_install_path="/data/INTERNAL/peppy_screensaver/templates/"
+                this_label="VU Meter"
+                ;;
+            "templates_peppy_spectrum")
+                this_install_path="/data/INTERNAL/peppy_screensaver/templates_spectrum/"
+                this_label="VU Meter + Spectrum"
+                ;;
+            "templates_spectrum")
+                this_install_path="/data/INTERNAL/peppy_screensaver/templates_spectrum/"
+                this_label="Spectrum"
+                ;;
+        esac
 
         # Check for companion templates
         local companions=$(find_companions "$zip_file")
+        
         if [[ -n "$companions" ]]; then
+            # Has companions - show as Complete Set
             cat >> "$dir/README.md" << EOF
-**Related Downloads:**
+> **Important:** This template is part of a set. Both parts must be installed for the meters to work correctly.
 
+**Complete Set (both required):**
+
+- ${this_label}: [${template_name}.zip](${template_name}.zip) -> \`${this_install_path}\`
 EOF
             echo "$companions" | while IFS='|' read -r comp_category comp_name; do
                 [[ -z "$comp_category" ]] && continue
                 local comp_label=""
+                local comp_install=""
                 case "$comp_category" in
                     "template_peppy")
                         comp_label="VU Meter"
+                        comp_install="/data/INTERNAL/peppy_screensaver/templates/"
                         ;;
                     "templates_peppy_spectrum")
                         comp_label="VU Meter + Spectrum"
+                        comp_install="/data/INTERNAL/peppy_screensaver/templates_spectrum/"
                         ;;
                     "templates_spectrum")
                         comp_label="Spectrum"
+                        comp_install="/data/INTERNAL/peppy_screensaver/templates_spectrum/"
                         ;;
                 esac
                 local comp_path="${comp_category}/${res_path}/${comp_name}.zip"
-                echo "- [${comp_label}: ${comp_name}.zip](../../../${comp_path})" >> "$dir/README.md"
+                echo "- ${comp_label}: [${comp_name}.zip](../../../${comp_path}) -> \`${comp_install}\`" >> "$dir/README.md"
             done
             echo "" >> "$dir/README.md"
+        else
+            # No companions - single download
+            cat >> "$dir/README.md" << EOF
+**Download:** [${template_name}.zip](${template_name}.zip)
+**Install to:** \`${this_install_path}\`
+
+EOF
         fi
 
         cat >> "$dir/README.md" << EOF
@@ -344,23 +373,13 @@ EOF
 
     done
 
-    # Footer with category-specific install path
-    local install_path=""
-    case "$category" in
-        "template_peppy")
-            install_path="/data/INTERNAL/peppy_screensaver/templates/"
-            ;;
-        "templates_peppy_spectrum"|"templates_spectrum")
-            install_path="/data/INTERNAL/peppy_screensaver/templates_spectrum/"
-            ;;
-    esac
-    
+    # Footer
     cat >> "$dir/README.md" << EOF
 
 ## Installation
 
-1. Download the desired template zip
-2. Extract to \`${install_path}\`
+1. Download the desired template zip(s)
+2. Extract each to the path shown next to its download link
 3. Select in plugin settings
 
 ---
