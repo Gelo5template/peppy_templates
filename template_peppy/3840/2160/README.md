@@ -17,7 +17,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [3840x2160_140g5_casette_780.zip](3840x2160_140g5_casette_780.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 

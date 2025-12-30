@@ -18,12 +18,16 @@ get_template_prefix() {
 }
 
 # Find companion templates across categories
-# Returns: category/path/filename.zip for each match
+# Only matches between template_peppy and templates_spectrum
+# templates_peppy_spectrum is self-contained, no companions
 find_companions() {
     local current_zip="$1"
     local current_name=$(basename "$current_zip" .zip)
     local current_dir=$(dirname "$current_zip")
     local current_category=$(echo "$current_dir" | cut -d'/' -f1)
+    
+    # templates_peppy_spectrum is self-contained - no companions
+    [[ "$current_category" == "templates_peppy_spectrum" ]] && return
     
     # Get prefix
     local prefix=$(get_template_prefix "$current_name")
@@ -31,26 +35,30 @@ find_companions() {
     # Extract resolution from path (e.g., 1920/1080)
     local res_path=$(echo "$current_dir" | grep -oE '[0-9]+/[0-9]+')
     
-    # Search other categories for matching prefix
+    # Only search the other simple category
     local companions=""
+    local search_category=""
     
-    for category in template_peppy templates_peppy_spectrum templates_spectrum; do
-        # Skip current category
-        [[ "$category" == "$current_category" ]] && continue
+    if [[ "$current_category" == "template_peppy" ]]; then
+        search_category="templates_spectrum"
+    elif [[ "$current_category" == "templates_spectrum" ]]; then
+        search_category="template_peppy"
+    else
+        return
+    fi
+    
+    # Look for matching zips in same resolution
+    local search_dir="${search_category}/${res_path}"
+    [[ -d "$search_dir" ]] || return
+    
+    for zip in "$search_dir"/*.zip; do
+        [[ -f "$zip" ]] || continue
+        local zip_name=$(basename "$zip" .zip)
+        local zip_prefix=$(get_template_prefix "$zip_name")
         
-        # Look for matching zips in same resolution
-        local search_dir="${category}/${res_path}"
-        [[ -d "$search_dir" ]] || continue
-        
-        for zip in "$search_dir"/*.zip; do
-            [[ -f "$zip" ]] || continue
-            local zip_name=$(basename "$zip" .zip)
-            local zip_prefix=$(get_template_prefix "$zip_name")
-            
-            if [[ "$zip_prefix" == "$prefix" ]]; then
-                companions="${companions}${category}|${zip_name}\n"
-            fi
-        done
+        if [[ "$zip_prefix" == "$prefix" ]]; then
+            companions="${companions}${search_category}|${zip_name}\n"
+        fi
     done
     
     echo -e "$companions" | grep -v '^$' || true
@@ -65,6 +73,7 @@ find_resolution_folders() {
 
 # Extract preview from zip
 # Handles: subfolder/preview.png, preview.png at root, art.png as fallback
+# Also handles combined zips with nested structure
 extract_preview() {
     local zip_file="$1"
     local output_dir="$2"
@@ -77,12 +86,14 @@ extract_preview() {
     local zip_contents=$(unzip -l "$zip_file" 2>/dev/null || true)
     
     # Try to find preview file (in order of preference)
+    # For combined zips, preview should be at top level: name/preview.png
     local preview_file=""
     local patterns=("preview.png" "preview.jpg" "preview.jpeg" "art.png" "art.jpg")
     
     for pattern in "${patterns[@]}"; do
         # Match both subfolder/pattern and pattern at root (case insensitive)
-        preview_file=$(echo "$zip_contents" | grep -ioE "[^ ]*${pattern}" | head -1)
+        # Prioritize shorter paths (top-level preview over nested)
+        preview_file=$(echo "$zip_contents" | grep -ioE "[^ ]*${pattern}" | sort | head -1)
         if [[ -n "$preview_file" ]]; then
             break
         fi
@@ -118,6 +129,7 @@ extract_preview() {
 # CRITICAL: tr -d '\r' strips Windows line endings that break markdown tables
 # Supports both meters.txt (VU meters) and spectrum.txt (spectrum analyzers)
 # Handles packs with multiple templates
+# Handles combined zips (templates_peppy_spectrum) with nested structure
 get_meter_info() {
     local zip_file="$1"
     local field="$2"
@@ -126,21 +138,33 @@ get_meter_info() {
     local config_content=""
     local config_type="meter"
     
-    # Try meters.txt in subfolder
+    # Try meters.txt in various locations
+    # Standard: subfolder/meters.txt
     config_content=$(unzip -p "$zip_file" "*/meters.txt" 2>/dev/null | tr -d '\r' || true)
     
-    # Try meters.txt at root
+    # Combined structure: */templates/*/meters.txt
+    if [[ -z "$config_content" ]]; then
+        config_content=$(unzip -p "$zip_file" "*/templates/*/meters.txt" 2>/dev/null | tr -d '\r' || true)
+    fi
+    
+    # Root: meters.txt
     if [[ -z "$config_content" ]]; then
         config_content=$(unzip -p "$zip_file" "meters.txt" 2>/dev/null | tr -d '\r' || true)
     fi
     
-    # Try spectrum.txt in subfolder
+    # Try spectrum.txt in various locations
     if [[ -z "$config_content" ]]; then
         config_content=$(unzip -p "$zip_file" "*/spectrum.txt" 2>/dev/null | tr -d '\r' || true)
         config_type="spectrum"
     fi
     
-    # Try spectrum.txt at root
+    # Combined structure: */templates_spectrum/*/spectrum.txt
+    if [[ -z "$config_content" ]]; then
+        config_content=$(unzip -p "$zip_file" "*/templates_spectrum/*/spectrum.txt" 2>/dev/null | tr -d '\r' || true)
+        config_type="spectrum"
+    fi
+    
+    # Root: spectrum.txt
     if [[ -z "$config_content" ]]; then
         config_content=$(unzip -p "$zip_file" "spectrum.txt" 2>/dev/null | tr -d '\r' || true)
         config_type="spectrum"
@@ -223,7 +247,7 @@ EOF
             echo "VU Meter templates for PeppyMeter Screensaver." >> "$dir/README.md"
             ;;
         "templates_peppy_spectrum")
-            echo "VU Meter with Spectrum overlay templates." >> "$dir/README.md"
+            echo "Combined VU Meter + Spectrum templates (self-contained with both parts)." >> "$dir/README.md"
             ;;
         "templates_spectrum")
             echo "Spectrum Analyzer templates." >> "$dir/README.md"
@@ -305,20 +329,20 @@ EOF
 EOF
         fi
 
-        # Get install path for this template
-        local this_install_path=""
+        # Get install info for this template
+        local this_install_info=""
         local this_label=""
         case "$category" in
             "template_peppy")
-                this_install_path="/data/INTERNAL/peppy_screensaver/templates/"
+                this_install_info="Extract and copy folder to \`/data/INTERNAL/peppy_screensaver/templates/\`"
                 this_label="VU Meter"
                 ;;
             "templates_peppy_spectrum")
-                this_install_path="/data/INTERNAL/peppy_screensaver/templates_spectrum/"
-                this_label="VU Meter + Spectrum"
+                this_install_info="BOTH_PARTS"
+                this_label="VU Meter + Spectrum (combined)"
                 ;;
             "templates_spectrum")
-                this_install_path="/data/INTERNAL/peppy_screensaver/templates_spectrum/"
+                this_install_info="Extract and copy folder to \`/data/INTERNAL/peppy_screensaver/templates_spectrum/\`"
                 this_label="Spectrum"
                 ;;
         esac
@@ -333,7 +357,8 @@ EOF
 
 **Complete Set (both required):**
 
-- ${this_label}: [${template_name}.zip](${template_name}.zip) -> \`${this_install_path}\`
+- ${this_label}: [${template_name}.zip](${template_name}.zip)
+  - Extract and copy folder to \`/data/INTERNAL/peppy_screensaver/templates/\`
 EOF
             echo "$companions" | while IFS='|' read -r comp_category comp_name; do
                 [[ -z "$comp_category" ]] && continue
@@ -342,26 +367,35 @@ EOF
                 case "$comp_category" in
                     "template_peppy")
                         comp_label="VU Meter"
-                        comp_install="/data/INTERNAL/peppy_screensaver/templates/"
-                        ;;
-                    "templates_peppy_spectrum")
-                        comp_label="VU Meter + Spectrum"
-                        comp_install="/data/INTERNAL/peppy_screensaver/templates_spectrum/"
+                        comp_install="Extract and copy folder to \`/data/INTERNAL/peppy_screensaver/templates/\`"
                         ;;
                     "templates_spectrum")
                         comp_label="Spectrum"
-                        comp_install="/data/INTERNAL/peppy_screensaver/templates_spectrum/"
+                        comp_install="Extract and copy folder to \`/data/INTERNAL/peppy_screensaver/templates_spectrum/\`"
                         ;;
                 esac
                 local comp_path="${comp_category}/${res_path}/${comp_name}.zip"
-                echo "- ${comp_label}: [${comp_name}.zip](../../../${comp_path}) -> \`${comp_install}\`" >> "$dir/README.md"
+                echo "- ${comp_label}: [${comp_name}.zip](../../../${comp_path})" >> "$dir/README.md"
+                echo "  - ${comp_install}" >> "$dir/README.md"
             done
             echo "" >> "$dir/README.md"
+        elif [[ "$this_install_info" == "BOTH_PARTS" ]]; then
+            # Combined template - show both install steps
+            cat >> "$dir/README.md" << EOF
+**Download:** [${template_name}.zip](${template_name}.zip)
+
+**Install (both required):**
+1. Extract the zip file
+2. Copy \`templates/\` contents to \`/data/INTERNAL/peppy_screensaver/templates/\`
+3. Copy \`templates_spectrum/\` contents to \`/data/INTERNAL/peppy_screensaver/templates_spectrum/\`
+
+EOF
         else
             # No companions - single download
             cat >> "$dir/README.md" << EOF
 **Download:** [${template_name}.zip](${template_name}.zip)
-**Install to:** \`${this_install_path}\`
+
+**Install:** ${this_install_info}
 
 EOF
         fi
@@ -390,6 +424,244 @@ EOF
     echo "Generated: $dir/README.md"
 }
 
+# Generate master catalog with all templates grouped by resolution
+generate_catalog() {
+    echo ""
+    echo "========================================"
+    echo "Generating Master Catalog"
+    echo "========================================"
+    
+    mkdir -p catalog
+    
+    # Collect all resolutions and their templates
+    declare -A resolution_templates
+    declare -A resolution_categories
+    
+    for zip_file in $(find template_peppy templates_peppy_spectrum templates_spectrum -name "*.zip" 2>/dev/null); do
+        local dir=$(dirname "$zip_file")
+        local category=$(echo "$dir" | cut -d'/' -f1)
+        local res=$(echo "$dir" | grep -oE '[0-9]+/[0-9]+' | tr '/' 'x')
+        
+        [[ -z "$res" ]] && continue
+        
+        # Track templates per resolution
+        resolution_templates[$res]="${resolution_templates[$res]}${zip_file}\n"
+        
+        # Track categories per resolution
+        case "$category" in
+            "template_peppy")
+                resolution_categories[$res]="${resolution_categories[$res]}VU,"
+                ;;
+            "templates_spectrum")
+                resolution_categories[$res]="${resolution_categories[$res]}Spectrum,"
+                ;;
+            "templates_peppy_spectrum")
+                resolution_categories[$res]="${resolution_categories[$res]}Combined,"
+                ;;
+        esac
+    done
+    
+    # Generate index README
+    cat > catalog/README.md << 'EOF'
+# PeppyMeter Template Catalog
+
+Browse templates by screen resolution.
+
+## Available Resolutions
+
+| Resolution | Templates | Types |
+|------------|-----------|-------|
+EOF
+
+    # Sort resolutions and add to index
+    for res in $(echo "${!resolution_templates[@]}" | tr ' ' '\n' | sort); do
+        local count=$(echo -e "${resolution_templates[$res]}" | grep -c '.zip' || echo 0)
+        local cats=$(echo "${resolution_categories[$res]}" | tr ',' '\n' | sort -u | grep -v '^$' | tr '\n' ', ' | sed 's/, $//')
+        echo "| [${res}](${res}.md) | ${count} | ${cats} |" >> catalog/README.md
+    done
+    
+    # Add installation instructions
+    cat >> catalog/README.md << 'EOF'
+
+---
+
+## Installation Instructions
+
+All paths are relative to `/data/INTERNAL/peppy_screensaver/`
+
+### VU Meter Only (from template_peppy)
+
+1. Download the zip file
+2. Extract the zip file
+3. Copy the extracted folder to `templates/`
+
+**Example:**
+```
+Download: 800x480_retro_wood.zip
+Extract:  800x480_retro_wood/
+Copy to:  /data/INTERNAL/peppy_screensaver/templates/800x480_retro_wood/
+```
+
+### Spectrum Only (from templates_spectrum)
+
+1. Download the zip file
+2. Extract the zip file
+3. Copy the extracted folder to `templates_spectrum/`
+
+**Example:**
+```
+Download: 800x480_retro_wood.zip
+Extract:  800x480_retro_wood/
+Copy to:  /data/INTERNAL/peppy_screensaver/templates_spectrum/800x480_retro_wood/
+```
+
+### Combined VU + Spectrum (from templates_peppy_spectrum)
+
+1. Download the zip file
+2. Extract the zip file
+3. Open the extracted folder - you will see `templates/` and `templates_spectrum/` subfolders
+4. Copy the contents of `templates/` to `templates/`
+5. Copy the contents of `templates_spectrum/` to `templates_spectrum/`
+
+**Example:**
+```
+Download: 800x480_retro_wood.zip
+Extract:  800x480_retro_wood/
+Inside:   800x480_retro_wood/templates/800x480_retro_wood/
+          800x480_retro_wood/templates_spectrum/800x480_retro_wood/
+
+Copy to:  /data/INTERNAL/peppy_screensaver/templates/800x480_retro_wood/
+          /data/INTERNAL/peppy_screensaver/templates_spectrum/800x480_retro_wood/
+```
+
+---
+
+*Auto-generated by [PeppyMeter Templates](https://github.com/foonerd/peppy_templates)*
+EOF
+
+    echo "Generated: catalog/README.md"
+    
+    # Generate per-resolution catalog files
+    for res in $(echo "${!resolution_templates[@]}" | tr ' ' '\n' | sort); do
+        generate_resolution_catalog "$res" "${resolution_templates[$res]}"
+    done
+}
+
+# Generate catalog page for a single resolution
+generate_resolution_catalog() {
+    local res="$1"
+    local templates="$2"
+    
+    echo "  Generating catalog/${res}.md"
+    
+    cat > "catalog/${res}.md" << EOF
+# ${res} Templates
+
+All templates available for ${res} resolution.
+
+---
+
+EOF
+
+    # Process each template
+    echo -e "$templates" | grep '.zip' | while read -r zip_file; do
+        [[ -z "$zip_file" ]] && continue
+        [[ ! -f "$zip_file" ]] && continue
+        
+        local template_name=$(basename "$zip_file" .zip)
+        local dir=$(dirname "$zip_file")
+        local category=$(echo "$dir" | cut -d'/' -f1)
+        local res_path=$(echo "$dir" | grep -oE '[0-9]+/[0-9]+')
+        
+        # Determine type badge and install instructions
+        local type_badge=""
+        local install_info=""
+        case "$category" in
+            "template_peppy")
+                type_badge="VU Meter"
+                install_info="Extract and copy folder to \`/data/INTERNAL/peppy_screensaver/templates/\`"
+                ;;
+            "templates_spectrum")
+                type_badge="Spectrum"
+                install_info="Extract and copy folder to \`/data/INTERNAL/peppy_screensaver/templates_spectrum/\`"
+                ;;
+            "templates_peppy_spectrum")
+                type_badge="Combined"
+                install_info="BOTH_PARTS"
+                ;;
+        esac
+        
+        # Get meter info
+        local meter_name=$(get_meter_info "$zip_file" "name")
+        local meter_count=$(get_meter_info "$zip_file" "count")
+        local meter_type=$(get_meter_info "$zip_file" "type")
+        
+        # Check if preview exists in category folder
+        local preview_path=""
+        for ext in png jpg jpeg svg; do
+            if [[ -f "${dir}/previews/${template_name}.${ext}" ]]; then
+                preview_path="../${dir}/previews/${template_name}.${ext}"
+                break
+            fi
+        done
+        
+        # Template entry
+        cat >> "catalog/${res}.md" << EOF
+## ${template_name}
+
+**Type:** ${type_badge}
+
+EOF
+
+        # Add preview if exists
+        if [[ -n "$preview_path" ]]; then
+            echo "![${template_name}](${preview_path})" >> "catalog/${res}.md"
+            echo "" >> "catalog/${res}.md"
+        fi
+        
+        # Show meter names for packs
+        if [[ "$meter_count" -gt 1 ]]; then
+            cat >> "catalog/${res}.md" << EOF
+**Included Meters (${meter_count}):**
+
+${meter_name}
+
+EOF
+        elif [[ -n "$meter_name" ]]; then
+            echo "**Meter:** ${meter_name}" >> "catalog/${res}.md"
+            echo "" >> "catalog/${res}.md"
+        fi
+        
+        # Download and install info
+        cat >> "catalog/${res}.md" << EOF
+**Download:** [${template_name}.zip](../${zip_file})
+
+EOF
+
+        # Show install instructions based on type
+        if [[ "$install_info" == "BOTH_PARTS" ]]; then
+            cat >> "catalog/${res}.md" << EOF
+**Install (both required):**
+1. Extract the zip file
+2. Copy \`templates/${template_name}/\` to \`/data/INTERNAL/peppy_screensaver/templates/\`
+3. Copy \`templates_spectrum/${template_name}/\` to \`/data/INTERNAL/peppy_screensaver/templates_spectrum/\`
+
+EOF
+        else
+            cat >> "catalog/${res}.md" << EOF
+**Install:** ${install_info}
+
+EOF
+        fi
+
+        echo "---" >> "catalog/${res}.md"
+        echo "" >> "catalog/${res}.md"
+
+    done
+    
+    echo "Generated: catalog/${res}.md"
+}
+
 # Main
 echo "========================================"
 echo "PeppyMeter Template README Generator"
@@ -415,3 +687,6 @@ done
 
 echo ""
 echo "Done."
+
+# Generate catalog
+generate_catalog

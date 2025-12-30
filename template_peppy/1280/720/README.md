@@ -17,7 +17,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [1280x720_custom_01.zip](1280x720_custom_01.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -34,7 +35,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [1280x720_custom_02.zip](1280x720_custom_02.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -51,7 +53,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [1280x720_custom_06.zip](1280x720_custom_06.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 

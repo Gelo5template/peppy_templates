@@ -4,48 +4,6 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
-## 800x480_as200-1custom_12_meter
-
-![800x480_as200-1custom_12_meter](previews/800x480_as200-1custom_12_meter.png)
-
-| Property | Value |
-|----------|-------|
-| Meter Name | AudioResearch-S200-1 |
-| Meter Type | circular |
-| Extended Config | Yes |
-| Spectrum | Yes |
-| Album Art | Yes |
-
-> **Important:** This template is part of a set. Both parts must be installed for the meters to work correctly.
-
-**Complete Set (both required):**
-
-- VU Meter: [800x480_as200-1custom_12_meter.zip](800x480_as200-1custom_12_meter.zip) -> `/data/INTERNAL/peppy_screensaver/templates/`
-- Spectrum: [800x480_as200-1custom_12_spectr.zip](../../../templates_spectrum/0800/480/800x480_as200-1custom_12_spectr.zip) -> `/data/INTERNAL/peppy_screensaver/templates_spectrum/`
-
----
-
-## 800x480_as200custom_11
-
-![800x480_as200custom_11](previews/800x480_as200custom_11.png)
-
-| Property | Value |
-|----------|-------|
-| Meter Name | AudioResearch-S200-2 |
-| Meter Type | circular |
-| Extended Config | Yes |
-| Spectrum | Yes |
-| Album Art | Yes |
-
-> **Important:** This template is part of a set. Both parts must be installed for the meters to work correctly.
-
-**Complete Set (both required):**
-
-- VU Meter: [800x480_as200custom_11.zip](800x480_as200custom_11.zip) -> `/data/INTERNAL/peppy_screensaver/templates/`
-- Spectrum: [800x480_as200custom_11.zip](../../../templates_spectrum/0800/480/800x480_as200custom_11.zip) -> `/data/INTERNAL/peppy_screensaver/templates_spectrum/`
-
----
-
 ## 800x480_custom_01
 
 ![800x480_custom_01](previews/800x480_custom_01.png)
@@ -59,7 +17,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_01.zip](800x480_custom_01.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -76,7 +35,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_02.zip](800x480_custom_02.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -93,7 +53,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_03.zip](800x480_custom_03.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -110,7 +71,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_04.zip](800x480_custom_04.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -127,7 +89,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_05.zip](800x480_custom_05.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -144,7 +107,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_06.zip](800x480_custom_06.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -161,7 +125,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_07.zip](800x480_custom_07.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -178,7 +143,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_08.zip](800x480_custom_08.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -195,7 +161,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_09.zip](800x480_custom_09.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -212,7 +179,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_10.zip](800x480_custom_10.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -229,7 +197,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_13.zip](800x480_custom_13.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
@@ -246,7 +215,8 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [800x480_custom_14.zip](800x480_custom_14.zip)
-**Install to:** `/data/INTERNAL/peppy_screensaver/templates/`
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
