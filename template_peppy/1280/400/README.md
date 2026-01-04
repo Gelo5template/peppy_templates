@@ -58,6 +58,60 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
+## 1280x400_bo_beosound9000
+
+![1280x400_bo_beosound9000](previews/1280x400_bo_beosound9000.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | bo_beosound9000 |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_bo_beosound9000.zip](1280x400_bo_beosound9000.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x400_dan_dagostimo_mlife
+
+![1280x400_dan_dagostimo_mlife](previews/1280x400_dan_dagostimo_mlife.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | dan_dagostimo_mlife |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_dan_dagostimo_mlife.zip](1280x400_dan_dagostimo_mlife.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x400_esoteric-grandioso-t1
+
+![1280x400_esoteric-grandioso-t1](previews/1280x400_esoteric-grandioso-t1.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | esoteric-grandioso-t1 |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_esoteric-grandioso-t1.zip](1280x400_esoteric-grandioso-t1.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
 ## 1280x400_mcintosh_mx100
 
 ![1280x400_mcintosh_mx100](previews/1280x400_mcintosh_mx100.png)
@@ -197,6 +251,78 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [1280x400_nad_m33_1.zip](1280x400_nad_m33_1.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x400_rose_rs150
+
+![1280x400_rose_rs150](previews/1280x400_rose_rs150.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | rose-rs150 |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_rose_rs150.zip](1280x400_rose_rs150.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x400_rose_rs250
+
+![1280x400_rose_rs250](previews/1280x400_rose_rs250.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | rose-rs250 |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_rose_rs250.zip](1280x400_rose_rs250.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x400_technics_SUR1000
+
+![1280x400_technics_SUR1000](previews/1280x400_technics_SUR1000.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | technics |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_technics_SUR1000.zip](1280x400_technics_SUR1000.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x400_volumio1
+
+![1280x400_volumio1](previews/1280x400_volumio1.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | volumio2 |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_volumio1.zip](1280x400_volumio1.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
