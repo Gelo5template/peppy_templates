@@ -233,7 +233,7 @@ VU Meter templates for PeppyMeter Screensaver.
 
 | Property | Value |
 |----------|-------|
-| Meter Name | 1920x1080_t1800_ReelTape |
+| Meter Name | 1920x1080_ReelTape |
 | Meter Type | circular |
 | Extended Config | Yes |
 | Spectrum | No |
