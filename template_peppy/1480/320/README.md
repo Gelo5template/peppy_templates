@@ -127,6 +127,47 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
+## 1480x320_g5_504_meters
+
+![1480x320_g5_504_meters](previews/1480x320_g5_504_meters.png)
+
+| Property | Value |
+|----------|-------|
+| Template Pack | Yes (20 templates) |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Included Meters:**
+
+- 61G5_AdvanceX220_ONLY meters
+- 62G5_Rose OUT
+- 63G5_Rose IN
+- 64G5_Alvin only meters
+- 65G5_LED Out ONLY
+- 66G5_FM Stereo Only
+- 67G5_Rudeer Only
+- 68G5_Tascam Only
+- 69G5_NAD C3050
+- 70G5_NAD
+- 71G5_NAD M10 only
+- 72G5_Old Braun
+- 73G5_Namson Only
+- 74G5_Sharp
+- 75G5_Hitachi7500 Only
+- 76G5_Hartman Only
+- 77G5_Dagostino
+- 78G5_R55 Only
+- 79G5_Accuphase Old Only
+- 80G5_Bocatech
+
+**Download:** [1480x320_g5_504_meters.zip](1480x320_g5_504_meters.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
 
 ## Installation
 
