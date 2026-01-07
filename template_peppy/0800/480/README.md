@@ -238,6 +238,24 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
+## 800x480_south_park_2
+
+![800x480_south_park_2](previews/800x480_south_park_2.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | southpark2 |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [800x480_south_park_2.zip](800x480_south_park_2.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
 
 ## Installation
 
