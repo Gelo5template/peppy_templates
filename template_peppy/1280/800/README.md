@@ -4,6 +4,24 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
+## 1280x800_dagostino_pendulum
+
+![1280x800_dagostino_pendulum](previews/1280x800_dagostino_pendulum.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | dan_dagostimo_mlife |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x800_dagostino_pendulum.zip](1280x800_dagostino_pendulum.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
 ## 1280x800_dan_dagostimo_momentum_c2
 
 ![1280x800_dan_dagostimo_momentum_c2](previews/1280x800_dan_dagostimo_momentum_c2.png)
@@ -17,6 +35,24 @@ VU Meter templates for PeppyMeter Screensaver.
 | Album Art | Yes |
 
 **Download:** [1280x800_dan_dagostimo_momentum_c2.zip](1280x800_dan_dagostimo_momentum_c2.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x800_esoteric-grandioso-t1
+
+![1280x800_esoteric-grandioso-t1](previews/1280x800_esoteric-grandioso-t1.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | esoteric-grandioso-t1 |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x800_esoteric-grandioso-t1.zip](1280x800_esoteric-grandioso-t1.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
@@ -171,6 +207,52 @@ VU Meter templates for PeppyMeter Screensaver.
 - 70G5_Nixi Spectrum
 
 **Download:** [1280x800_g5_423_meters.zip](1280x800_g5_423_meters.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x800_naim_set
+
+![1280x800_naim_set](previews/1280x800_naim_set.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | Naim_Set |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x800_naim_set.zip](1280x800_naim_set.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x800_t1800_pack7
+
+![1280x800_t1800_pack7](previews/1280x800_t1800_pack7.png)
+
+| Property | Value |
+|----------|-------|
+| Template Pack | Yes (7 templates) |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Included Meters:**
+
+- t1800_tubes
+- t1800_Fisher
+- t1800_Tascam
+- t1800_TubeHeadPhone
+- t1800_Sansui9090
+- t1800_ReelTape
+- t1800_StarWars
+
+**Download:** [1280x800_t1800_pack7.zip](1280x800_t1800_pack7.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
