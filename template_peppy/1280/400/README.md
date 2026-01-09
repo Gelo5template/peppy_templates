@@ -130,6 +130,47 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
+## 1280x400_g5_201_meters
+
+![1280x400_g5_201_meters](previews/1280x400_g5_201_meters.png)
+
+| Property | Value |
+|----------|-------|
+| Template Pack | Yes (20 templates) |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Included Meters:**
+
+- 01G5_Naim
+- 02G5_Naim 2
+- 03G5_McIntosh
+- 04G5_Accuphase
+- 05G5_Luxman
+- 06G5_Technics TX30
+- 07G5_Technics_silver
+- 08G5_Technics_Black
+- 09G5_Advence
+- 10G5_Advance2
+- 11G5_Adv_X220
+- 12G5_Sony TA-N77
+- 13G5_Onkyo 5570
+- 14G5_Krell KAS
+- 15G5_T+A 3000HV
+- 16G5_Turnable Black B
+- 17G5_TurnOld
+- 18G5_Turnable Black
+- 19G5_Turnable Green
+- 20G5_Turnable Blue
+
+**Download:** [1280x400_g5_201_meters.zip](1280x400_g5_201_meters.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
 ## 1280x400_mcintosh_mx100
 
 ![1280x400_mcintosh_mx100](previews/1280x400_mcintosh_mx100.png)
