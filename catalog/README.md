@@ -6,12 +6,12 @@ Browse templates by screen resolution.
 
 | Resolution | Templates | Types |
 |------------|-----------|-------|
-| [0800x480](0800x480.md) | 18 | Combined,VU, |
+| [0800x480](0800x480.md) | 19 | Combined,VU, |
 | [1024x600](1024x600.md) | 3 | Combined,VU, |
 | [1280x400](1280x400.md) | 26 | Combined,VU, |
-| [1280x720](1280x720.md) | 7 | Combined,VU, |
+| [1280x720](1280x720.md) | 8 | Combined,VU, |
 | [1280x800](1280x800.md) | 12 | Combined,VU, |
-| [1480x320](1480x320.md) | 6 | Combined,VU, |
+| [1480x320](1480x320.md) | 7 | Combined,VU, |
 | [1920x1080](1920x1080.md) | 8 | Combined,VU, |
 | [1920x480](1920x480.md) | 3 | Combined,VU, |
 | [1920x515](1920x515.md) | 6 | Combined,VU, |

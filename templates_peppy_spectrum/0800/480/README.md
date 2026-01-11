@@ -46,6 +46,27 @@ Combined VU Meter + Spectrum templates (self-contained with both parts).
 
 ---
 
+## 800x480_dan_dagostino_mlife
+
+![800x480_dan_dagostino_mlife](previews/800x480_dan_dagostino_mlife.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | dan_dagostino_mlife |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | Yes |
+| Album Art | Yes |
+
+**Download:** [800x480_dan_dagostino_mlife.zip](800x480_dan_dagostino_mlife.zip)
+
+**Install (both required):**
+1. Extract the zip file
+2. Copy `templates/` contents to `/data/INTERNAL/peppy_screensaver/templates/`
+3. Copy `templates_spectrum/` contents to `/data/INTERNAL/peppy_screensaver/templates_spectrum/`
+
+---
+
 
 ## Installation
 
