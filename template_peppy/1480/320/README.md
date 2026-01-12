@@ -193,6 +193,31 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
+## 1480x320_g5_506_meters
+
+![1480x320_g5_506_meters](previews/1480x320_g5_506_meters.png)
+
+| Property | Value |
+|----------|-------|
+| Template Pack | Yes (4 templates) |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Included Meters:**
+
+- 85G5_Pioneer Real
+- 86G5_Techinics Turn
+- 87G5_Onkyo Reel
+- 88G5_Teak Reel
+
+**Download:** [1480x320_g5_506_meters.zip](1480x320_g5_506_meters.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
 
 ## Installation
 
