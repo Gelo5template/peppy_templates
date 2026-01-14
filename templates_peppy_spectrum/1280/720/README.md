@@ -34,6 +34,27 @@ Combined VU Meter + Spectrum templates (self-contained with both parts).
 
 ---
 
+## 1280x720_g5_451_ms
+
+![1280x720_g5_451_ms](previews/1280x720_g5_451_ms.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | 107G5_Pioneer S+M |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | Yes |
+| Album Art | Yes |
+
+**Download:** [1280x720_g5_451_ms.zip](1280x720_g5_451_ms.zip)
+
+**Install (both required):**
+1. Extract the zip file
+2. Copy `templates/` contents to `/data/INTERNAL/peppy_screensaver/templates/`
+3. Copy `templates_spectrum/` contents to `/data/INTERNAL/peppy_screensaver/templates_spectrum/`
+
+---
+
 
 ## Installation
 
