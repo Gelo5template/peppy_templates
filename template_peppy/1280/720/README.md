@@ -30,6 +30,24 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
+## 1280x720_Pioneer_PLX-500
+
+![1280x720_Pioneer_PLX-500](previews/1280x720_Pioneer_PLX-500.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | Pioneer PLX-500 |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x720_Pioneer_PLX-500.zip](1280x720_Pioneer_PLX-500.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
 ## 1280x720_custom_01
 
 ![1280x720_custom_01](previews/1280x720_custom_01.png)
@@ -158,6 +176,42 @@ VU Meter templates for PeppyMeter Screensaver.
 - 16G5_Rehringer
 
 **Download:** [1280x720_g5_442_meters.zip](1280x720_g5_442_meters.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x720_g5_443_rotate
+
+![1280x720_g5_443_rotate](previews/1280x720_g5_443_rotate.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | 17G5_TURN Vinyl Black |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x720_g5_443_rotate.zip](1280x720_g5_443_rotate.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x720_g5_444_rotate
+
+![1280x720_g5_444_rotate](previews/1280x720_g5_444_rotate.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | 18G5_Streamer CD |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x720_g5_444_rotate.zip](1280x720_g5_444_rotate.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 

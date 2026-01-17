@@ -4,6 +4,78 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
+## 1280x400_Aluminium_frame_01
+
+![1280x400_Aluminium_frame_01](previews/1280x400_Aluminium_frame_01.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | Aluminium_frame |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_Aluminium_frame_01.zip](1280x400_Aluminium_frame_01.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x400_Aluminium_green_02
+
+![1280x400_Aluminium_green_02](previews/1280x400_Aluminium_green_02.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | Aluminium_frame_green |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_Aluminium_green_02.zip](1280x400_Aluminium_green_02.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x400_Aluminium_orange_03
+
+![1280x400_Aluminium_orange_03](previews/1280x400_Aluminium_orange_03.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | Aluminium_frame_orange |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_Aluminium_orange_03.zip](1280x400_Aluminium_orange_03.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x400_MomentumMxV
+
+![1280x400_MomentumMxV](previews/1280x400_MomentumMxV.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | Dan-Dagostino-MomentumMxV |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_MomentumMxV.zip](1280x400_MomentumMxV.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
 ## 1280x400_PMN_LedStrypes
 
 ![1280x400_PMN_LedStrypes](previews/1280x400_PMN_LedStrypes.png)
