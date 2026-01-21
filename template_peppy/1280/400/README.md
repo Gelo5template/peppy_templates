@@ -100,6 +100,24 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
+## 1280x400_TA_symphonica_01
+
+![1280x400_TA_symphonica_01](previews/1280x400_TA_symphonica_01.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | TA_Symphonica |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [1280x400_TA_symphonica_01.zip](1280x400_TA_symphonica_01.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
 ## 1280x400_black_blue_square
 
 ![1280x400_black_blue_square](previews/1280x400_black_blue_square.png)
