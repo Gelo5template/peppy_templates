@@ -4,6 +4,24 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
+## 800x480_Pro-Ject_Metallica
+
+![800x480_Pro-Ject_Metallica](previews/800x480_Pro-Ject_Metallica.png)
+
+| Property | Value |
+|----------|-------|
+| Meter Name | Project-Metallica |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Download:** [800x480_Pro-Ject_Metallica.zip](800x480_Pro-Ject_Metallica.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
 ## 800x480_RB18_01
 
 ![800x480_RB18_01](previews/800x480_RB18_01.png)
