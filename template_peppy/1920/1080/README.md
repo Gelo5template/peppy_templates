@@ -4,24 +4,6 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
-## 1920x1080_140g5_casette_780
-
-![1920x1080_140g5_casette_780](previews/1920x1080_140g5_casette_780.png)
-
-| Property | Value |
-|----------|-------|
-| Meter Name | 140G5_Full_Cassette_Rotary |
-| Meter Type | linear |
-| Extended Config | Yes |
-| Spectrum | No |
-| Album Art | Yes |
-
-**Download:** [1920x1080_140g5_casette_780.zip](1920x1080_140g5_casette_780.zip)
-
-**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
-
----
-
 ## 1920x1080_g5_701_meters
 
 ![1920x1080_g5_701_meters](previews/1920x1080_g5_701_meters.png)
@@ -227,31 +209,13 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
-## 1920x1080_g5_706_meters
+## 1920x1080_g5_709_meters
 
-![1920x1080_g5_706_meters](previews/1920x1080_g5_706_meters.png)
-
-| Property | Value |
-|----------|-------|
-| Meter Name | 122G5_Technics Reel |
-| Meter Type | circular |
-| Extended Config | Yes |
-| Spectrum | No |
-| Album Art | Yes |
-
-**Download:** [1920x1080_g5_706_meters.zip](1920x1080_g5_706_meters.zip)
-
-**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
-
----
-
-## 1920x1080_g5_707_meters
-
-![1920x1080_g5_707_meters](previews/1920x1080_g5_707_meters.png)
+![1920x1080_g5_709_meters](previews/1920x1080_g5_709_meters.png)
 
 | Property | Value |
 |----------|-------|
-| Template Pack | Yes (2 templates) |
+| Template Pack | Yes (20 templates) |
 | Meter Type | circular |
 | Extended Config | Yes |
 | Spectrum | No |
@@ -259,10 +223,76 @@ VU Meter templates for PeppyMeter Screensaver.
 
 **Included Meters:**
 
+- 121G5_Pioneer Gold
+- 122G5_Full Cassette Rotary
 - 123G5_Cassette_Circular
 - 124G5_Cassette_Linear
+- 125G5_Denon DP62
+- 126G5_Denon DP400
+- 127G5_Reloop RL7000
+- 128G5_Akai 77
+- 129G5_Studer A810
+- 130G5_Thorens
+- 131G5_Akai77_silver
+- 132G5_PioneerRT707_silver
+- 133G5_Antelope Reel
+- 134G5_AMG Turntable
+- 135G5_Sony 557
+- 136G5_CD Player Full
+- 137G5_Otari Reel
+- 138G5_McIntosh MTI100
+- 139G5_Naim Turntable
+- 140G5_TURN Vinyl Black
 
-**Download:** [1920x1080_g5_707_meters.zip](1920x1080_g5_707_meters.zip)
+**Download:** [1920x1080_g5_709_meters.zip](1920x1080_g5_709_meters.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1920x1080_g5_710_turntables
+
+![1920x1080_g5_710_turntables](previews/1920x1080_g5_710_turntables.png)
+
+| Property | Value |
+|----------|-------|
+| Template Pack | Yes (27 templates) |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Included Meters:**
+
+- 141G5_01_Vertere Turn
+- 141G5_02_Vertere Turn
+- 141G5_03_Vertere Turn
+- 142G5_01_Pioneer Gold
+- 142G5_02_Pioneer Gold
+- 142G5_03_Pioneer Gold
+- 143G5_TURN Vinyl Black
+- 144G5_01_Naim Turntable
+- 144G5_02_Naim Turntable
+- 144G5_03_Naim Turntable
+- 145G5_01_McIntosh MTI100
+- 145G5_02_McIntosh MTI100
+- 145G5_03_McIntosh MTI100
+- 146G5_01_Denon DP62
+- 146G5_02_Denon DP62
+- 146G5_03_Denon DP62
+- 147G5_01_Denon DP400
+- 147G5_02_Denon DP400
+- 147G5_03_Denon DP400
+- 148G5_01_Reloop RL7000
+- 148G5_02_Reloop RL7000
+- 148G5_03_Reloop RL7000
+- 149G5_01_Thorens
+- 149G5_02_Thorens
+- 149G5_03_Thorens
+- 150G5_02_AMG Turntable
+- 150G5_03_AMG Turntable
+
+**Download:** [1920x1080_g5_710_turntables.zip](1920x1080_g5_710_turntables.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
