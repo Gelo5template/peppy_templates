@@ -294,31 +294,33 @@ get_meter_info() {
     case "$field" in
         "name")
             # Get ALL section names for packs
-            local count=$(echo "$config_content" | grep -c '^\[' || echo 0)
+            local count
+            count=$(grep -c '^\[' <<< "$config_content" 2>/dev/null) || count=0
+            count=${count:-0}
             
             if [[ "$count" -gt 1 ]]; then
                 # Pack with multiple templates - list all with bullets
-                echo "$config_content" | grep '^\[' | tr -d '[]' | sed 's/^/- /'
+                grep '^\[' <<< "$config_content" | tr -d '[]' | sed 's/^/- /'
             elif [[ "$count" -eq 1 ]]; then
                 # Single template
-                echo "$config_content" | grep '^\[' | tr -d '[]' | xargs
+                grep '^\[' <<< "$config_content" | tr -d '[]' | xargs
             else
                 echo ""
             fi
             ;;
         "count")
-            # Return number of templates in pack
-            echo "$config_content" | grep -c '^\[' || echo 0
+            # Return number of templates in pack (grep -c prints 0 even when exit status is 1)
+            grep -c '^\[' <<< "$config_content" 2>/dev/null
             ;;
         "type")
             if [[ "$config_type" == "spectrum" ]]; then
                 echo "spectrum"
             else
-                echo "$config_content" | grep -m1 'meter.type' | cut -d'=' -f2 | tr -d ' ' | xargs
+                grep -m1 'meter.type' <<< "$config_content" | cut -d'=' -f2 | tr -d ' ' | xargs
             fi
             ;;
         "extended")
-            if echo "$config_content" | grep -qi 'config.extend.*=.*true'; then
+            if grep -qi 'config.extend.*=.*true' <<< "$config_content"; then
                 echo "Yes"
             else
                 echo "No"
@@ -327,8 +329,9 @@ get_meter_info() {
         "spectrum")
             if [[ "$config_type" == "spectrum" ]]; then
                 echo "Yes"
-            elif echo "$config_content" | grep -qi 'spectrum.*='; then
-                local spec_val=$(echo "$config_content" | grep -i 'spectrum' | grep -v '^#' | head -1 | cut -d'=' -f2 | tr -d ' ')
+            elif grep -qi 'spectrum.*=' <<< "$config_content"; then
+                local spec_val
+                spec_val=$(grep -i 'spectrum' <<< "$config_content" | grep -v '^#' | head -1 | cut -d'=' -f2 | tr -d ' ')
                 if [[ -n "$spec_val" && "$spec_val" != "none" && "$spec_val" != "None" ]]; then
                     echo "Yes"
                 else
@@ -339,7 +342,7 @@ get_meter_info() {
             fi
             ;;
         "albumart")
-            if echo "$config_content" | grep -qi 'albumart.pos'; then
+            if grep -qi 'albumart.pos' <<< "$config_content"; then
                 echo "Yes"
             else
                 echo "No"
