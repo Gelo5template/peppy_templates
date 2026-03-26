@@ -209,54 +209,13 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
-## 1920x1080_g5_709_meters
+## 1920x1080_g5_710_Turntables
 
-![1920x1080_g5_709_meters](previews/1920x1080_g5_709_meters.png)
-
-| Property | Value |
-|----------|-------|
-| Template Pack | Yes (20 templates) |
-| Meter Type | circular |
-| Extended Config | Yes |
-| Spectrum | No |
-| Album Art | Yes |
-
-**Included Meters:**
-
-- 121G5_Pioneer Gold
-- 122G5_Full Cassette Rotary
-- 123G5_Cassette_Circular
-- 124G5_Cassette_Linear
-- 125G5_Denon DP62
-- 126G5_Denon DP400
-- 127G5_Reloop RL7000
-- 128G5_Akai 77
-- 129G5_Studer A810
-- 130G5_Thorens
-- 131G5_Akai77_silver
-- 132G5_PioneerRT707_silver
-- 133G5_Antelope Reel
-- 134G5_AMG Turntable
-- 135G5_Sony 557
-- 136G5_CD Player Full
-- 137G5_Otari Reel
-- 138G5_McIntosh MTI100
-- 139G5_Naim Turntable
-- 140G5_TURN Vinyl Black
-
-**Download:** [1920x1080_g5_709_meters.zip](1920x1080_g5_709_meters.zip)
-
-**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
-
----
-
-## 1920x1080_g5_710_turntables
-
-![1920x1080_g5_710_turntables](previews/1920x1080_g5_710_turntables.png)
+![1920x1080_g5_710_Turntables](previews/1920x1080_g5_710_Turntables.png)
 
 | Property | Value |
 |----------|-------|
-| Template Pack | Yes (27 templates) |
+| Template Pack | Yes (30 templates) |
 | Meter Type | linear |
 | Extended Config | Yes |
 | Spectrum | No |
@@ -291,8 +250,104 @@ VU Meter templates for PeppyMeter Screensaver.
 - 149G5_03_Thorens
 - 150G5_02_AMG Turntable
 - 150G5_03_AMG Turntable
+- 151G5_01_Technics Silver
+- 151G5_02_Technics Silver
+- 151G5_03_Technics Silver
 
-**Download:** [1920x1080_g5_710_turntables.zip](1920x1080_g5_710_turntables.zip)
+**Download:** [1920x1080_g5_710_Turntables.zip](1920x1080_g5_710_Turntables.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1920x1080_g5_711_Tape_Recorder
+
+![1920x1080_g5_711_Tape_Recorder](previews/1920x1080_g5_711_Tape_Recorder.png)
+
+| Property | Value |
+|----------|-------|
+| Template Pack | Yes (10 templates) |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Included Meters:**
+
+- 151G5_Akai77 black
+- 152G5_Akai77_silver
+- 153G5_Studer A810
+- 154G5_PioneerRT707_silver
+- 155G5_Antelope Reel
+- 156G5_Otari Reel
+- 157G5_Revox B77
+- 158G5_Tascam Rec
+- 159G5_Technics Rec
+- 160G5_Metaxas Rec
+
+**Download:** [1920x1080_g5_711_Tape_Recorder.zip](1920x1080_g5_711_Tape_Recorder.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1920x1080_g5_712_Cassette
+
+![1920x1080_g5_712_Cassette](previews/1920x1080_g5_712_Cassette.png)
+
+| Property | Value |
+|----------|-------|
+| Template Pack | Yes (10 templates) |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Included Meters:**
+
+- 161G5_Pioneer Cassette
+- 162G5_TDK cassette
+- 163G5_TEAC cassette
+- 164G5_Maxell Cassette
+- 165G5_BASF Free
+- 166G5_Cassette_Circular
+- 167G5_Cassette_Linear
+- 168G5_Philips Cassette
+- 169G5_Denon DR650
+- 170G5_SonyK770 cassette
+
+**Download:** [1920x1080_g5_712_Cassette.zip](1920x1080_g5_712_Cassette.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1920x1080_g5_713_CD
+
+![1920x1080_g5_713_CD](previews/1920x1080_g5_713_CD.png)
+
+| Property | Value |
+|----------|-------|
+| Template Pack | Yes (10 templates) |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Included Meters:**
+
+- 171G5_Sony557 Full
+- 172G5_Sony557 Cust
+- 173G5_CD Player Full
+- 174G5_CD Player Cust
+- 175G5_Emerson Full
+- 176G5_Emerson Cust
+- 177G5_Dunu Cust
+- 178G5_Thinkya Cust
+- 179G5_Shanling Cust
+- 180G5_Syitren Cust
+
+**Download:** [1920x1080_g5_713_CD.zip](1920x1080_g5_713_CD.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 

@@ -199,24 +199,6 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
-## 1280x720_g5_443_rotate
-
-![1280x720_g5_443_rotate](previews/1280x720_g5_443_rotate.png)
-
-| Property | Value |
-|----------|-------|
-| Meter Name | 17G5_TURN Vinyl Black |
-| Meter Type | circular |
-| Extended Config | Yes |
-| Spectrum | No |
-| Album Art | Yes |
-
-**Download:** [1280x720_g5_443_rotate.zip](1280x720_g5_443_rotate.zip)
-
-**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
-
----
-
 ## 1280x720_g5_444_rotate
 
 ![1280x720_g5_444_rotate](previews/1280x720_g5_444_rotate.png)
@@ -235,70 +217,139 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
-## 1280x720_g5_445_rotate
+## 1280x720_g5_710_Turntables
 
-![1280x720_g5_445_rotate](previews/1280x720_g5_445_rotate.png)
+![1280x720_g5_710_Turntables](previews/1280x720_g5_710_Turntables.png)
 
 | Property | Value |
 |----------|-------|
-| Template Pack | Yes (2 templates) |
-| Meter Type | circular |
+| Template Pack | Yes (30 templates) |
+| Meter Type | linear |
 | Extended Config | Yes |
 | Spectrum | No |
 | Album Art | Yes |
 
 **Included Meters:**
 
-- 19G5_Cassette_Circular
-- 20G5_Cassette_Linear
+- 141G5_01_Vertere Turn
+- 141G5_02_Vertere Turn
+- 141G5_03_Vertere Turn
+- 142G5_01_Pioneer Gold
+- 142G5_02_Pioneer Gold
+- 142G5_03_Pioneer Gold
+- 143G5_TURN Vinyl Black
+- 144G5_01_Naim Turntable
+- 144G5_02_Naim Turntable
+- 144G5_03_Naim Turntable
+- 145G5_01_McIntosh MTI100
+- 145G5_02_McIntosh MTI100
+- 145G5_03_McIntosh MTI100
+- 146G5_01_Denon DP62
+- 146G5_02_Denon DP62
+- 146G5_03_Denon DP62
+- 147G5_01_Denon DP400
+- 147G5_02_Denon DP400
+- 147G5_03_Denon DP400
+- 148G5_01_Reloop RL7000
+- 148G5_02_Reloop RL7000
+- 148G5_03_Reloop RL7000
+- 149G5_01_Thorens
+- 149G5_02_Thorens
+- 149G5_03_Thorens
+- 150G5_02_AMG Turntable
+- 150G5_03_AMG Turntable
+- 151G5_01_Technics Silver
+- 151G5_02_Technics Silver
+- 151G5_03_Technics Silver
 
-**Download:** [1280x720_g5_445_rotate.zip](1280x720_g5_445_rotate.zip)
+**Download:** [1280x720_g5_710_Turntables.zip](1280x720_g5_710_Turntables.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
-## 1280x720_g5_707_meters
+## 1280x720_g5_711_Tape_Recorder
 
-![1280x720_g5_707_meters](previews/1280x720_g5_707_meters.png)
+![1280x720_g5_711_Tape_Recorder](previews/1280x720_g5_711_Tape_Recorder.png)
 
 | Property | Value |
 |----------|-------|
-| Template Pack | Yes (2 templates) |
-| Meter Type | circular |
+| Template Pack | Yes (10 templates) |
+| Meter Type | linear |
 | Extended Config | Yes |
 | Spectrum | No |
 | Album Art | Yes |
 
 **Included Meters:**
 
-- 123G5_Cassette_Circular
-- 124G5_Cassette_Linear
+- 151G5_Akai77 black
+- 152G5_Akai77_silver
+- 153G5_Studer A810
+- 154G5_PioneerRT707_silver
+- 155G5_Antelope Reel
+- 156G5_Otari Reel
+- 157G5_Revox B77
+- 158G5_Tascam Rec
+- 159G5_Technics Rec
+- 160G5_Metaxas Rec
 
-**Download:** [1280x720_g5_707_meters.zip](1280x720_g5_707_meters.zip)
+**Download:** [1280x720_g5_711_Tape_Recorder.zip](1280x720_g5_711_Tape_Recorder.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
-## 1280x720_g5_708_meters
+## 1280x720_g5_712_Cassette
 
-![1280x720_g5_708_meters](previews/1280x720_g5_708_meters.png)
+![1280x720_g5_712_Cassette](previews/1280x720_g5_712_Cassette.png)
 
 | Property | Value |
 |----------|-------|
-| Template Pack | Yes (2 templates) |
-| Meter Type | circular |
+| Template Pack | Yes (10 templates) |
+| Meter Type | linear |
 | Extended Config | Yes |
 | Spectrum | No |
 | Album Art | Yes |
 
 **Included Meters:**
 
-- 125G5_Denon DP62
-- 126G5_Reloop RL7000
+- 161G5_Pioneer Cassette
+- 162G5_TDK cassette
+- 163G5_TEAC cassette
+- 164G5_Maxell Cassette
+- 165G5_BASF Free
+- 166G5_Cassette_Circular
+- 167G5_Cassette_Linear
+- 168G5_Philips Cassette
+- 169G5_Denon DR650
+- 170G5_SonyK770 cassette
 
-**Download:** [1280x720_g5_708_meters.zip](1280x720_g5_708_meters.zip)
+**Download:** [1280x720_g5_712_Cassette.zip](1280x720_g5_712_Cassette.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x720_g5_713_CD
+
+![1280x720_g5_713_CD](previews/1280x720_g5_713_CD.png)
+
+| Property | Value |
+|----------|-------|
+| Template Pack | Yes (4 templates) |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Included Meters:**
+
+- 171G5_Sony557 Full
+- 172G5_Sony557 Cust
+- 173G5_CD Player Full
+- 174G5_CD Player Cust
+
+**Download:** [1280x720_g5_713_CD.zip](1280x720_g5_713_CD.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
