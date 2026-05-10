@@ -325,7 +325,7 @@ VU Meter templates for PeppyMeter Screensaver.
 
 | Property | Value |
 |----------|-------|
-| Template Pack | Yes (10 templates) |
+| Template Pack | Yes (15 templates) |
 | Meter Type | linear |
 | Extended Config | Yes |
 | Spectrum | No |
@@ -343,6 +343,11 @@ VU Meter templates for PeppyMeter Screensaver.
 - 168G5_Philips Cassette
 - 169G5_Denon DR650
 - 170G5_SonyK770 cassette
+- 240G5_MION24C
+- 241G5_Kenwood cassette
+- 242G5_Sharp
+- 243G5_Sansui Cassette
+- 244G5_Pioneer CT_F1250
 
 **Download:** [1920x1080_g5_712_Cassette.zip](1920x1080_g5_712_Cassette.zip)
 
