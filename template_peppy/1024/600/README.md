@@ -81,30 +81,6 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
-## 1024x600_g5_113_meters
-
-![1024x600_g5_113_meters](previews/1024x600_g5_113_meters.png)
-
-| Property | Value |
-|----------|-------|
-| Template Pack | Yes (3 templates) |
-| Meter Type | linear |
-| Extended Config | Yes |
-| Spectrum | No |
-| Album Art | Yes |
-
-**Included Meters:**
-
-- 36G5_Full Cassette Reel
-- 37G5_Tascam Reel
-- 38G5_Studer Reel
-
-**Download:** [1024x600_g5_113_meters.zip](1024x600_g5_113_meters.zip)
-
-**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
-
----
-
 ## 1024x600_g5_711_Tape_Recorder
 
 ![1024x600_g5_711_Tape_Recorder](previews/1024x600_g5_711_Tape_Recorder.png)
