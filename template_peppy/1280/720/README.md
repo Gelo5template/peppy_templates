@@ -120,33 +120,6 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
-## 1280x720_g5_442_meters
-
-![1280x720_g5_442_meters](previews/1280x720_g5_442_meters.png)
-
-| Property | Value |
-|----------|-------|
-| Template Pack | Yes (6 templates) |
-| Meter Type | circular |
-| Extended Config | Yes |
-| Spectrum | No |
-| Album Art | Yes |
-
-**Included Meters:**
-
-- 11G5_Kenwood Rev
-- 12G5_T+A
-- 13G5_Accuphase monoblock
-- 14G5_Old2 braun
-- 15G5_Hartman
-- 16G5_Rehringer
-
-**Download:** [1280x720_g5_442_meters.zip](1280x720_g5_442_meters.zip)
-
-**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
-
----
-
 ## 1280x720_g5_444_rotate
 
 ![1280x720_g5_444_rotate](previews/1280x720_g5_444_rotate.png)
@@ -283,6 +256,47 @@ VU Meter templates for PeppyMeter Screensaver.
 - 60G5_HelixOne
 
 **Download:** [1280x720_g5_703_meters.zip](1280x720_g5_703_meters.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1280x720_g5_704_meters
+
+![1280x720_g5_704_meters](previews/1280x720_g5_704_meters.png)
+
+| Property | Value |
+|----------|-------|
+| Template Pack | Yes (20 templates) |
+| Meter Type | circular |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Included Meters:**
+
+- 61G5_Berlant
+- 62G5_BlueSea_White
+- 63G5_BlueSea_Black
+- 64G5_BMC
+- 65G5_Brianworks
+- 66G5_DAgostini
+- 67G5_Dark Spotify
+- 68G5_Boombox
+- 69G5_Hartman
+- 70G5_MarkLev
+- 71G5_Vertical blue
+- 72G5_Horizontal blue
+- 73G5_Yellowkidney
+- 74G5_Triplett
+- 75G5_OLD Meter
+- 76G5_Old2 braun
+- 77G5_Rehringer
+- 78G5_Round yellow
+- 79G5_J37 Tape
+- 80G5_Simens
+
+**Download:** [1280x720_g5_704_meters.zip](1280x720_g5_704_meters.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
