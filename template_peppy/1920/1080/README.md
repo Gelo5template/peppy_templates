@@ -115,7 +115,7 @@ VU Meter templates for PeppyMeter Screensaver.
 - 53G5_Yamaha DJ
 - 54G5_Vincent
 - 55G5_SKS12 Vertical
-- 56G5_Full Cassette
+- 56G5_Free
 - 57G5_Teac Cassette
 - 58G5_Burmaster
 - 59G5_Fire Rock
