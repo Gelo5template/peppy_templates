@@ -168,31 +168,6 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
-## 1480x320_g5_505_meters
-
-![1480x320_g5_505_meters](previews/1480x320_g5_505_meters.png)
-
-| Property | Value |
-|----------|-------|
-| Template Pack | Yes (4 templates) |
-| Meter Type | circular |
-| Extended Config | Yes |
-| Spectrum | No |
-| Album Art | Yes |
-
-**Included Meters:**
-
-- 81G5_Kenwood Deck
-- 82G5_Tascam Reel
-- 83G5_Free TDK
-- 84G5_TURNTABLE Black
-
-**Download:** [1480x320_g5_505_meters.zip](1480x320_g5_505_meters.zip)
-
-**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
-
----
-
 ## 1480x320_g5_910_turntables
 
 ![1480x320_g5_910_turntables](previews/1480x320_g5_910_turntables.png)
@@ -221,6 +196,38 @@ VU Meter templates for PeppyMeter Screensaver.
 - 112G5_Techinics Turn
 
 **Download:** [1480x320_g5_910_turntables.zip](1480x320_g5_910_turntables.zip)
+
+**Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
+
+---
+
+## 1480x320_g5_911_Tape_Recorder
+
+![1480x320_g5_911_Tape_Recorder](previews/1480x320_g5_911_Tape_Recorder.png)
+
+| Property | Value |
+|----------|-------|
+| Template Pack | Yes (11 templates) |
+| Meter Type | linear |
+| Extended Config | Yes |
+| Spectrum | No |
+| Album Art | Yes |
+
+**Included Meters:**
+
+- 151G5_Ampex Reel
+- 152G5_Otari Reel
+- 153G5_TDK Reel
+- 154G5_Akai 77
+- 155G5_Akai77_silver
+- 156G5_TapeAK
+- 157G5_Fostex Rec
+- 158G5_Revox B77
+- 159G5_MION24
+- 160G5_Tascam Reel
+- 161G5_Free TDK
+
+**Download:** [1480x320_g5_911_Tape_Recorder.zip](1480x320_g5_911_Tape_Recorder.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
