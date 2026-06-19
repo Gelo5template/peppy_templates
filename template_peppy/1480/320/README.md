@@ -168,13 +168,13 @@ VU Meter templates for PeppyMeter Screensaver.
 
 ---
 
-## 1480x320_g5_505_meters
+## 1480x320_g5_910_turntables
 
-![1480x320_g5_505_meters](previews/1480x320_g5_505_meters.png)
+![1480x320_g5_910_turntables](previews/1480x320_g5_910_turntables.png)
 
 | Property | Value |
 |----------|-------|
-| Template Pack | Yes (4 templates) |
+| Template Pack | Yes (12 templates) |
 | Meter Type | circular |
 | Extended Config | Yes |
 | Spectrum | No |
@@ -182,37 +182,52 @@ VU Meter templates for PeppyMeter Screensaver.
 
 **Included Meters:**
 
-- 81G5_Kenwood Deck
-- 82G5_Tascam Reel
-- 83G5_Free TDK
-- 84G5_TURNTABLE Black
+- 101G5_Pioneer Gold
+- 102G5_Denon DP62
+- 103G5_Thorens
+- 104G5_TURNTABLE Black
+- 105G5_McIntosh MTI100
+- 106G5_Crosley Turntable
+- 107G5_Gramovox
+- 108G5_SME60
+- 109G5_Vertere Turn
+- 110G5_TechDas
+- 111G5_Pioneer Gold2
+- 112G5_Techinics Turn
 
-**Download:** [1480x320_g5_505_meters.zip](1480x320_g5_505_meters.zip)
+**Download:** [1480x320_g5_910_turntables.zip](1480x320_g5_910_turntables.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
 ---
 
-## 1480x320_g5_506_meters
+## 1480x320_g5_911_Tape_Recorder
 
-![1480x320_g5_506_meters](previews/1480x320_g5_506_meters.png)
+![1480x320_g5_911_Tape_Recorder](previews/1480x320_g5_911_Tape_Recorder.png)
 
 | Property | Value |
 |----------|-------|
-| Template Pack | Yes (4 templates) |
-| Meter Type | circular |
+| Template Pack | Yes (11 templates) |
+| Meter Type | linear |
 | Extended Config | Yes |
 | Spectrum | No |
 | Album Art | Yes |
 
 **Included Meters:**
 
-- 85G5_Pioneer Real
-- 86G5_Techinics Turn
-- 87G5_Onkyo Reel
-- 88G5_Teak Reel
+- 151G5_Ampex Reel
+- 152G5_Otari Reel
+- 153G5_TDK Reel
+- 154G5_Akai 77
+- 155G5_Akai77_silver
+- 156G5_TapeAK
+- 157G5_Fostex Rec
+- 158G5_Revox B77
+- 159G5_MION24
+- 160G5_Tascam Reel
+- 161G5_Free TDK
 
-**Download:** [1480x320_g5_506_meters.zip](1480x320_g5_506_meters.zip)
+**Download:** [1480x320_g5_911_Tape_Recorder.zip](1480x320_g5_911_Tape_Recorder.zip)
 
 **Install:** Extract and copy folder to `/data/INTERNAL/peppy_screensaver/templates/`
 
